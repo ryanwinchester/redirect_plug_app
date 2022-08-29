@@ -1,5 +1,7 @@
 # Redirect
 
+[![CI](https://github.com/ryanwinchester/redirect_plug_app/actions/workflows/ci.yml/badge.svg)](https://github.com/ryanwinchester/redirect_plug_app/actions/workflows/ci.yml)
+
 Plug-based Elixir application that redirects every request.
 
 Required ENV vars for prod:
