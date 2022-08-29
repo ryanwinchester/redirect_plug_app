@@ -19,4 +19,9 @@ if config_env() == :prod do
   if scheme = System.get_env("REDIRECT_SCHEME") do
     config :redirect, Redirect, scheme: scheme
   end
+else
+  config :redirect, Redirect,
+    host: "google.com",
+    port: 443,
+    scheme: :https
 end

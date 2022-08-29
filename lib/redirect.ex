@@ -14,7 +14,7 @@ defmodule Redirect do
 
     conn
     |> put_resp_header("location", build_uri(conn, config))
-    |> send_resp(302, "You are being redirected to #{config.host}...")
+    |> send_resp(config.status, "You are being redirected to #{config.host}...")
     |> halt()
   end
 
@@ -33,7 +33,8 @@ defmodule Redirect do
     Application.fetch_env!(:redirect, __MODULE__)
     |> Enum.into(%{
       port: conn.port,
-      scheme: conn.scheme
+      scheme: conn.scheme,
+      status: 302
     })
   end
 end
