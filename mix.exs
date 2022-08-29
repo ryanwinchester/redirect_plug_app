@@ -22,7 +22,8 @@ defmodule Redirect.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:req, "~> 0.3.0", only: [:test]}
     ]
   end
 end

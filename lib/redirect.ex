@@ -22,7 +22,7 @@ defmodule Redirect do
     %URI{
       scheme: to_string(config.scheme),
       host: config.host,
-      query: conn.query_string,
+      query: unless(conn.query_string == "", do: conn.query_string),
       path: conn.request_path,
       port: config.port
     }

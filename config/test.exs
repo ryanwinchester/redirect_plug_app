@@ -4,3 +4,5 @@ config :redirect, Redirect,
   host: "google.com",
   port: 443,
   scheme: :https
+
+config :logger, level: :warning
