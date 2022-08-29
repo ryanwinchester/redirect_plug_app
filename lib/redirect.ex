@@ -22,12 +22,18 @@ defmodule Redirect do
     %URI{
       scheme: to_string(config.scheme),
       host: config.host,
-      query: unless(conn.query_string == "", do: conn.query_string),
-      path: conn.request_path,
+      query: query(conn.query_string),
+      path: path(conn.request_path),
       port: config.port
     }
     |> URI.to_string()
   end
+
+  defp query(""), do: nil
+  defp query(query), do: query
+
+  defp path("/"), do: nil
+  defp path(path), do: path
 
   defp config!(conn) do
     Application.fetch_env!(:redirect, __MODULE__)

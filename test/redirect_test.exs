@@ -9,7 +9,7 @@ defmodule RedirectTest do
         port: 4000,
       }
 
-      expected = "https://google.com/"
+      expected = "https://google.com"
 
       assert resp = Req.get!(uri, follow_redirects: false)
       assert resp.status == 302
@@ -25,7 +25,7 @@ defmodule RedirectTest do
         query: "q=foo+fighters",
       }
 
-      expected = "https://google.com/?#{uri.query}"
+      expected = "https://google.com?#{uri.query}"
 
       assert resp = Req.get!(uri, follow_redirects: false)
       assert resp.status == 302
