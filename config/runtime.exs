@@ -3,10 +3,11 @@ import Config
 if config_env() == :prod do
   ## Endpoint config
 
-  config :redirect, endpoint: [
-    port: System.get_env("ENDPOINT_PORT", "443") |> String.to_integer(),
-    scheme: System.get_env("ENDPOINT_SCHEME", "https") |> String.to_existing_atom()
-  ]
+  config :redirect,
+    endpoint: [
+      port: System.get_env("ENDPOINT_PORT", "443") |> String.to_integer(),
+      scheme: System.get_env("ENDPOINT_SCHEME", "https") |> String.to_existing_atom()
+    ]
 
   ## Redirect config
 

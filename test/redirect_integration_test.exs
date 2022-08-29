@@ -21,7 +21,7 @@ defmodule RedirectIntegrationTest do
         scheme: "http",
         host: "localhost",
         port: 4000,
-        query: "q=foo",
+        query: "q=foo"
       }
 
       assert resp = Req.get!(uri)
@@ -36,7 +36,7 @@ defmodule RedirectIntegrationTest do
         scheme: "http",
         host: "localhost",
         port: 4000,
-        path: "/search",
+        path: "/search"
       }
 
       assert resp = Req.get!(uri)
