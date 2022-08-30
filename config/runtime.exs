@@ -5,8 +5,8 @@ if config_env() == :prod do
 
   config :redirect,
     endpoint: [
-      port: System.get_env("ENDPOINT_PORT", "443") |> String.to_integer(),
-      scheme: System.get_env("ENDPOINT_SCHEME", "https") |> String.to_existing_atom()
+      port: System.get_env("ENDPOINT_PORT", "4000") |> String.to_integer(),
+      scheme: System.get_env("ENDPOINT_SCHEME", "http") |> String.to_existing_atom()
     ]
 
   ## Redirect config

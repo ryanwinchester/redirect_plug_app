@@ -10,8 +10,8 @@ Required ENV vars for prod:
 
 Optional ENV vars:
 
- * `ENDPOINT_PORT` - defaults to `"443"`
- * `ENDPOINT_SCHEME` - defaults to `"https"`
+ * `ENDPOINT_PORT` - defaults to `"4000"`
+ * `ENDPOINT_SCHEME` - defaults to `"http"`
  * `REDIRECT_PORT` - defaults to `"443"`
  * `REDIRECT_SCHEME` - defaults to `"https"`
  * `REDIRECT_STATUS` - defaults to `"302"` (e.g. `"301"`)

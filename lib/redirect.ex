@@ -10,7 +10,7 @@ defmodule Redirect do
 
   @impl Plug
   def call(conn, _opts) do
-    config = config!(conn)
+    config = config!()
 
     conn
     |> put_resp_header("location", build_uri(conn, config))
@@ -22,9 +22,9 @@ defmodule Redirect do
     %URI{
       scheme: to_string(config.scheme),
       host: config.host,
-      query: query(conn.query_string),
+      port: config.port,
       path: path(conn.request_path),
-      port: config.port
+      query: query(conn.query_string)
     }
     |> URI.to_string()
   end
@@ -35,11 +35,11 @@ defmodule Redirect do
   defp path("/"), do: nil
   defp path(path), do: path
 
-  defp config!(conn) do
+  defp config! do
     Application.fetch_env!(:redirect, __MODULE__)
     |> Enum.into(%{
-      port: conn.port,
-      scheme: conn.scheme,
+      port: 443,
+      scheme: :https,
       status: 302
     })
   end

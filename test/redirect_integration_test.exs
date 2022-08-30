@@ -7,7 +7,7 @@ defmodule RedirectIntegrationTest do
       uri = %URI{
         scheme: "http",
         host: "localhost",
-        port: 4000
+        port: 4001
       }
 
       assert resp = Req.get!(uri)
@@ -20,7 +20,7 @@ defmodule RedirectIntegrationTest do
       uri = %URI{
         scheme: "http",
         host: "localhost",
-        port: 4000,
+        port: 4001,
         query: "q=foo"
       }
 
@@ -35,7 +35,7 @@ defmodule RedirectIntegrationTest do
       uri = %URI{
         scheme: "http",
         host: "localhost",
-        port: 4000,
+        port: 4001,
         path: "/search"
       }
 
@@ -49,7 +49,7 @@ defmodule RedirectIntegrationTest do
       uri = %URI{
         scheme: "http",
         host: "localhost",
-        port: 4000,
+        port: 4001,
         query: "q=foo+fighters",
         path: "/search"
       }

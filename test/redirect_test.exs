@@ -6,7 +6,7 @@ defmodule RedirectTest do
       uri = %URI{
         scheme: "http",
         host: "localhost",
-        port: 4000
+        port: 4001
       }
 
       expected = "https://google.com"
@@ -21,7 +21,7 @@ defmodule RedirectTest do
       uri = %URI{
         scheme: "http",
         host: "localhost",
-        port: 4000,
+        port: 4001,
         query: "q=foo+fighters"
       }
 
@@ -37,7 +37,7 @@ defmodule RedirectTest do
       uri = %URI{
         scheme: "http",
         host: "localhost",
-        port: 4000,
+        port: 4001,
         path: "/search"
       }
 
@@ -53,7 +53,7 @@ defmodule RedirectTest do
       uri = %URI{
         scheme: "http",
         host: "localhost",
-        port: 4000,
+        port: 4001,
         query: "q=foo+fighters",
         path: "/search"
       }
